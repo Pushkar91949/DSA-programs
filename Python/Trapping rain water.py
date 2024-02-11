@@ -1,22 +1,22 @@
-def TrappingRainWater(height):
-    if not height:
+def TrappingRainWater(heights):
+    if not heights:
         return 0
 
-    l, r = 0, len(height)-1
-    leftMax, rightMax = height[l], height[r]
+    l, r = 0, len(heights)-1
+    left_max, right_max = heights[l], heights[r]
 
-    res = 0
+    ans = 0
 
     while l < r:
-        if leftMax < rightMax:
+        if left_max < right_max:
             l += 1
-            leftMax = max(leftMax, height[l])
-            res += leftMax - height[l]
+            left_max = max(left_max, heights[l])
+            ans += left_max - heights[l]
         else:
             r -= 1
-            rightMax = max(rightMax, height[r])
-            res += rightMax - height[r]
-    return res
+            right_max = max(right_max, heights[r])
+            ans += right_max - heights[r]
+    return ans
 
 
 print(TrappingRainWater([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]))
