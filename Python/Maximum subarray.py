@@ -39,3 +39,16 @@ def kadanes_algorithm(arr):
 arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
 result = kadanes_algorithm(arr)
 print("Maximum subarray sum: ", result)
+
+# ALTERNATIVE APPROACH FOR KADANE"S ALGORITHM:
+
+def maxSubArray(self, nums: List[int]) -> int:
+    ans = -inf
+    curr_sum = 0
+    for num in nums:
+        curr_sum += num
+        if ans < curr_sum:
+            ans = curr_sum
+        if curr_sum < 0:
+            curr_sum = 0
+    return ans
