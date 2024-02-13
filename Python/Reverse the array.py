@@ -5,7 +5,8 @@ def rever(arr):
         arr[i] = arr[n - 1 - i]
         arr[n - i - 1] = temp
     return arr
-
+# Space complexity = O(1)
+# Time complexity = O(n)
 # The above approach to reverse an array iterates until half the length of an array and swaps the first element with the last element,
 # second element with the second last element until it reaches the middle of the array, like this the array is revered.
 # When the last element is set as first element, the first element is temporarily stored in a temp variable. Which is later set to the
@@ -18,7 +19,8 @@ def rev(arr):
     for i in range(n-1, -1, -1):
         temp.append(arr[i])
     return temp
-
+# Space complexity = O(n)
+# Time complexity = O(n)
 # The above approach to revrse an array is less efficient in terms of space as is uses an entire new array.
 # We iterate through the old array from the last element to the first element and we keep adding the element in the temp array.
 
