@@ -1,20 +1,19 @@
 import math
 def maxProduct(nums):
     maxi = -math.inf
-    prod = 1
+    prefix,suffix = 1,1
 
-    for i in range(len(nums)):
-        prod *= nums[i]
-        maxi = max(prod,maxi)
-        if prod == 0:
-            prod = 1
-    prod = 1
-    for i in range(len(nums) - 1, -1, -1):
-        prod *= nums[i]
+    n = len(nums)
+    for i in range(n):
+        if prefix == 0:
+            prefix = 1
+        if suffix == 0:
+            suffix = 1
 
-        maxi = max(prod,maxi)
-        if prod == 0:
-            prod = 1
+        prefix *= nums[i]
+        suffix *= nums[n - i - 1]
+
+        maxi = max(maxi, max(prefix, suffix))
     return maxi
 
 nums = [2,3,-2,4]
