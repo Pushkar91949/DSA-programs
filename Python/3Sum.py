@@ -24,7 +24,7 @@ array = [-1, 0, 1, 2, -1, -4]
 print(threeSum(array))
 
 
-# Time complexity = O(n^2)
+# Time complexity = O(n^2).
 # O(nlogn) for sorting and O(n^2) when we run two loops, one inside another.) --> O(nlogn) + O(n^2) = O(n^2).
 
 # We take each element of nums and firs element of the triplet one by one. When the 1st element is set, we just need 2 more elements which we get by using 2 pointers, 
