@@ -25,4 +25,5 @@ class GfG
         }
         return false;
     }
-} // Question link: https://www.geeksforgeeks.org/problems/circular-linked-list/1
+} 
+// Question link: https://www.geeksforgeeks.org/problems/circular-linked-list/1
